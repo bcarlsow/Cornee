@@ -1,0 +1,51 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/*
+ Layers (same numbering as the VIA file):
+ 0 BASE, 1 NUM, 2 SYM, 3 NAV/FN
+ VIA macro 0 = Gui+Shift+S, macro 1 = Gui+L, written inline below.
+*/
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        base_layer {
+            bindings = <
+&kp TAB     &kp Q  &kp W  &kp E     &kp R     &kp T        &kp Y  &kp U      &kp I      &kp O    &kp P     &kp BSPC
+&kp ESC     &kp A  &kp S  &kp D     &kp F     &kp G        &kp H  &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z  &kp X  &kp C     &kp V     &kp B        &kp N  &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RET
+                          &kp LCTRL &kp LALT  &lt 3 SPACE  &lt 2 SPACE  &mo 1  &mo 3
+            >;
+        };
+
+        num_layer {
+            bindings = <
+&kp TAB     &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0    &kp BSPC
+&kp LCTRL   &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &none      &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &none
+&kp LSHFT   &none    &none    &none    &none    &none        &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT   &kp KP_NUMLOCK
+                               &kp LGUI &trans   &lt 2 SPACE  &kp SPACE  &trans  &kp RALT
+            >;
+        };
+
+        sym_layer {
+            bindings = <
+&kp TAB     &kp EXCL   &kp AT    &kp HASH   &kp DLLR   &kp PRCNT     &kp CARET  &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR   &kp BSPC
+&kp LCTRL   &kp TILDE  &kp HASH  &kp FSLH   &kp LBRC   &kp LBKT      &kp RBKT   &kp RBRC   &kp BSLH   &kp MINUS  &kp KP_PLUS &kp PIPE
+&kp LSHFT   &kp GRAVE  &none     &kp EQUAL  &kp COLON  &kp LG(LS(S)) &kp UNDER  &kp PLUS   &kp LT     &kp GT     &kp QMARK  &kp EQUAL
+                                  &kp LGUI  &trans     &lt 2 SPACE   &kp SPACE  &trans     &kp RALT
+            >;
+        };
+
+        nav_layer {
+            bindings = <
+&kp C_VOL_UP  &kp F1   &kp F2   &kp F3   &kp F4   &kp C_PP        &kp LG(L)  &kp N7     &kp UP    &kp N9    &kp DEL    &kp BSPC
+&kp C_VOL_DN  &kp F5   &kp F6   &kp F7   &kp F8   &kp C_PREV      &none      &kp LEFT   &kp DOWN  &kp RIGHT &none      &kp DEL
+&kp LG(LS(S)) &kp F9   &kp F10  &kp F11  &kp F12  &kp C_NEXT     &kp KP_N0  &kp N1     &kp N2    &kp N3    &kp END    &kp CAPS
+                                &kp LGUI &kp LCTRL &lt 3 SPACE   &kp SPACE  &kp RCTRL  &kp RCTRL
+            >;
+        };
+    };
+};
