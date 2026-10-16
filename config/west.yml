@@ -2,6 +2,8 @@ manifest:
   defaults:
     revision: v0.3
   remotes:
+    - name: myfork
+      url-base: https://github.com/bcarlsow
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: mctechnology17
