@@ -15,5 +15,6 @@ manifest:
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
+      remote: myfork
   self:
     path: config
